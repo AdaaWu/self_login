@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Adaa-Wu Admin</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/fontawesome/css/all.css" />
+  </head>
+
+  <body>
+    <div class="materialContainer">
+      <form class="box">
+        <div class="title"><i class="fas fa-sign-in-alt"></i>登入</div>
+        <div class="input">
+          <label for="name">帳號</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            autocomplete="off"
+            placeholder
+            required
+          />
+          <span class="spin"></span>
+        </div>
+        <div class="input">
+          <label for="pass">密碼</label>
+          <input type="password" name="pass" id="pass" placeholder required />
+          <span class="spin"></span>
+        </div>
+        <div class="button login">
+          <button type="submit">
+            <span>Enter</span>
+            <span class="check"><i class="fas fa-check"></i></span>
+          </button>
+        </div>
+        <a href="javascript:" class="pass-bottom">忘記密碼</a>
+      </form>
+      <p>Copyright © 2022 Adaa-Wu All rights reserved.</p>
+
+      <form class="overbox" method="post" id="created">
+        <div class="material-button alt-2">
+          <span class="shape"></span>
+        </div>
+        <div class="title"><i class="far fa-user"></i>註冊</div>
+        <div class="input">
+          <label for="regname">帳號</label>
+          <input
+            type="text"
+            pattern="[a-zA-Z0-9]{8,18}"
+            name="regname"
+            id="regname"
+            maxlength="18"
+            title="不包含特殊字元或中文 且至少8字元"
+            autocomplete="off"
+            placeholder=""
+            onFocus="if(value=='')
+                    {placeholder='請輸入英文大小寫數字 8-18字元'}"
+            onBlur="if(!value)
+                    {placeholder=defaultValue}"
+            required
+          />
+
+          <span class="spin"></span>
+        </div>
+        <div class="input">
+          <label for="regpass">密碼</label>
+          <input
+            type="password"
+            name="regpass"
+            id="regpass"
+            placeholder
+            required
+          />
+          <span class="spin"></span>
+        </div>
+        <div class="input">
+          <label for="reregpass">確認密碼</label>
+          <input
+            type="password"
+            name="reregpass"
+            id="reregpass"
+            placeholder
+            required
+          />
+          <span class="spin"></span>
+        </div>
+        <div class="button">
+          <!-- <button id="add" onclick="location.href='ok.html'"> -->
+          <button id="add">
+            <span>OK</span>
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script type="module" src="firebase/config.js"></script>
+  </body>
+</html>
