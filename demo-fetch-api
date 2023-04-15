@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fetch API Demo</title>
+  </head>
+  <body>
+    <h1>Fetch API Demo</h1>
+    <button onclick="fetchData()">Load Daily Data</button>
+    <pre id="output"></pre>
+
+    <script>
+      function fetchData() {
+        fetch('daily.json')
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+            document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }
+    </script>
+  </body>
+</html>
