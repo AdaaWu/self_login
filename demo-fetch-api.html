@@ -9,6 +9,9 @@
     <button onclick="fetchData()">Load Daily Data</button>
     <pre id="output"></pre>
 
+    
+        <button onclick="postData()">Load Daily Data</button>
+
     <script>
       function fetchData() {
         fetch('dailay.json')
@@ -20,7 +23,38 @@
           .catch(error => {
             console.error(error);
           });
+        }
       }
+      
+      
+      
+      function postData(){
+      
+        // 建立一個新的日記物件
+        const newDaily = {
+        date: '2023-04-18',
+        title: '美好的一天',
+        content: '今天是一個美好的一天，我和我的朋友們去了海邊玩，享受了美好的陽光和海風。'
+      };
+
+      // 將新的日記物件轉換成 JSON 格式
+      const json = JSON.stringify(newDaily);
+
+      // 發送 POST 請求以新增日記
+      fetch('dailay.json', {
+       method: 'POST',
+       headers: {
+        'Content-Type': 'application/json'
+        },
+        body: json
+      })
+      .then(response => {
+        console.log(response);
+      })
+        .catch(error => {
+        console.error(error);
+        });
+        
     </script>
   </body>
 </html>
